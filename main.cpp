@@ -5,9 +5,7 @@ using namespace std;
 
 int main()
 {
-    int x,y;
-    Jugador jugadores[10];
-    jugadores[0]= Jugador("Marcos",2,2);
-    jugadores[0].PintarTablero();
+    Jugador j1("Pedro");
+    j1.PintarTablero();
 
 }
