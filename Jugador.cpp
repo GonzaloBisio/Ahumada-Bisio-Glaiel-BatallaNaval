@@ -6,28 +6,18 @@ class Jugador
 {
 private:
     string nombre;
-    int puntaje;
-    Tablero tablero;
+    Tablero* tablero;
 public:
-    Jugador(string);
-    Jugador();
+    Jugador(string,Tablero*);
     void PintarTablero();
     bool Recibir(int,int);
     void Atacar(Jugador,int,int);
 };
 
-Jugador::Jugador(string n)
+Jugador::Jugador(string n, Tablero* t)
 {
     nombre=n;
-    puntaje = 0;
-    tablero = Tablero();
-}
-
-Jugador::Jugador()
-{
-    nombre="NULL";
-    puntaje = 0;
-    tablero = Tablero();
+    tablero=t;
 }
 
 void Jugador::PintarTablero(){
@@ -39,24 +29,24 @@ void Jugador::PintarTablero(){
     cout<<"+-------------------------------------------+"<<endl;
     if (z%2==0)
     {
-        cout<<"|"<<string(z,' ')<<Texto<<string(z-1,' ')<<"|"<<endl;
+        cout<<"|"<<string(z,' ')<<Texto<<string(z,' ')<<"|"<<endl;
     }else
     {
-        cout<<"|"<<string(z,' ')<<Texto<<string(z,' ')<<"|"<<endl;
+        cout<<"|"<<string(z,' ')<<Texto<<string(z-1,' ')<<"|"<<endl;
     }    
     cout<<"+-------------------------------------------+"<<endl;
 
-
-    tablero.PintarTablero();
+    tablero->PintarTablero();
 }
 
 
 bool Jugador::Recibir(int x,int y){
-    tablero.Bala(x,y);
+    tablero->Recibir(x,y);
+    tablero->PintarTablero();
 }
 
+
 void Jugador::Atacar(Jugador enemigo,int x,int y){
-    //enemigo.PintarTablero();
-    cout<<"Atacando a "<<nombre<<endl;
+    cout<<"Atacando a "<<"El enemigo"<<endl;
     enemigo.Recibir(x,y);
 }

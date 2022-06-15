@@ -7,10 +7,11 @@ private:
     int x=45, y=16;
     int recibido[100];
     char matriz[16][45];
+    void pintar(int,int);
 public:
     Tablero();
     void PintarTablero();
-    void Bala(int x, int y);
+    void Recibir(int x, int y);
     void crearMatriz();
 
 };
@@ -21,8 +22,9 @@ Tablero::Tablero()
 }
 
 
-void Tablero::Bala(int x, int y){
-    cout<<"Disparaste en "<<x <<" Y en "<<y;
+void Tablero::Recibir(int x, int y){
+    cout<<"Disparaste en "<<x <<" Y en "<<y<<endl;
+    pintar(x,y);
 }
 
 void Tablero::PintarTablero(){
@@ -34,8 +36,6 @@ void Tablero::PintarTablero(){
         }
         cout<<endl;
     }
-
-
 }
 
 void Tablero::crearMatriz(){
@@ -77,4 +77,12 @@ void Tablero::crearMatriz(){
 
     
     cout<<"Termine de crear la tabla"<<endl;
+ 
 }
+
+void Tablero::pintar(int x, int y){
+    matriz[y*2][5+ (x*4)] = 'X';
+    matriz[0][0] = 'p';
+    cout<<matriz[0][0];
+}
+
