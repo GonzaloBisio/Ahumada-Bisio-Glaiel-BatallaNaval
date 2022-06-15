@@ -9,7 +9,7 @@ private:
     char matriz[16][45]; //Esta Matriz esta invertida su x e y
     void pintar(int,int);
     bool Flota[10][7]={false}; //esta es una matriz espejo que nos va a indicar donde estan los barcos
-    void pintar(int x, int y,char vr)
+    void pintar(int x, int y,char vr);
 
 public:
     Tablero();
