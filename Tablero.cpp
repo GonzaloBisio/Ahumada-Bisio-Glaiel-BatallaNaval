@@ -6,14 +6,18 @@ class Tablero
 private:
     int x=45, y=16;
     int recibido[100];
-    char matriz[16][45];
+    char matriz[16][45]; //Esta Matriz esta invertida su x e y
     void pintar(int,int);
+    bool Flota[10][7]={false}; //esta es una matriz espejo que nos va a indicar donde estan los barcos
+    void pintar(int x, int y,char vr)
+
 public:
     Tablero();
     void PintarTablero();
     void Recibir(int x, int y);
     void crearMatriz();
-
+    void crearFlota();
+    
 };
 
 Tablero::Tablero()
@@ -81,8 +85,33 @@ void Tablero::crearMatriz(){
 }
 
 void Tablero::pintar(int x, int y){
-    matriz[y*2][5+ (x*4)] = 'X';
-    matriz[0][0] = 'p';
-    cout<<matriz[0][0];
+    matriz[y*2][6+ (x*4)] = 'X';
+    
 }
+void Tablero::pintar(int x, int y,char vr){
+    matriz[y*2][6+ (x*4)] = vr;
+    
+}
+/*
 
+void Tablero::crearFlota(){
+    int barcos=10;
+    int l;
+    while (barcos>0)
+    {
+        cout<<"Te quedan "<<barcos<<" Barcos para acomodar."<<endl;
+        cout<<"Recuerda que ningun barco puede ser mas largo que 5."
+        cin>>l;
+        if(l>5 or l<0){
+            cout<<"El valor es invalido.";
+        
+        }else{
+            
+        }
+
+    }
+    
+
+
+}
+*/

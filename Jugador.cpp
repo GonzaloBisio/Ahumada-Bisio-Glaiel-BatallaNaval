@@ -41,7 +41,9 @@ void Jugador::PintarTablero(){
 
 
 bool Jugador::Recibir(int x,int y){
+    
     tablero->Recibir(x,y);
+    
     tablero->PintarTablero();
 }
 

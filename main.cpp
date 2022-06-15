@@ -12,6 +12,7 @@ int main()
 
     j1.Atacar(j2,3,4);
     j2.PintarTablero();
+
 }
 
 
