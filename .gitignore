@@ -1,0 +1,14 @@
+
+*.txt
+*.log
+*.cpp
+*.check_cache
+*.o
+*.bin
+*.ninja
+*.c
+*.cmake
+*.xml
+*.iml
+.idea/.name
+.DS_Store
