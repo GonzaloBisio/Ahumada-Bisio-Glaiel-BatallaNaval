@@ -7,11 +7,13 @@ class Jugador
 private:
     string nombre;
     Tablero* tablero;
+    int puntaje;
 public:
     Jugador(string,Tablero*);
     void PintarTablero();
     bool Recibir(int,int);
     void Atacar(Jugador,int,int);
+    bool hayBarco(int,int);
 };
 
 Jugador::Jugador(string n, Tablero* t)
@@ -51,4 +53,7 @@ bool Jugador::Recibir(int x,int y){
 void Jugador::Atacar(Jugador enemigo,int x,int y){
     cout<<"Atacando a "<<"El enemigo"<<endl;
     enemigo.Recibir(x,y);
+}
+bool Jugador::hayBarco(int x, int y){
+    return tablero->hayBarco(x,y);
 }

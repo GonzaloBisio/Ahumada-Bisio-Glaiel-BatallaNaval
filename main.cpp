@@ -2,11 +2,12 @@
 using namespace std;
 #include "Jugador.cpp"
 
+
+
 int main()
 {
 
-    // t1.crearFlota():
-
+    
     string pl[7] = {"a", "b", "c", "d", "e", "f", "g"};
     int pn[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
@@ -30,19 +31,23 @@ int main()
     Jugador j1(n1, &t);
     Tablero t2;
     Jugador j2(n2, &t2);
+    
 
-    int q;
-    int n;
-    string l;
-    bool wrong = true;
-    bool wrongn = true;
-    bool ataque = false;
+
+    
 
     cout<< "Ingrese 1 para comenzar, cualquier otro caracter para salir"<<endl;
     cin>>q;
     while (q == 1)
     {
 
+        int q;
+        int n;
+        string l;
+        bool wrong = true;
+        bool wrongn = true;
+        bool ataque = false;
+    
         //turno 1
 
         cout<< "\nEs el turno de " << n1 << endl;
