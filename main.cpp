@@ -2,7 +2,9 @@
 using namespace std;
 #include "Jugador.cpp"
 
-
+void crearFlota(Jugador jugador,Tablero tablero){
+    jugador.getNOmbre()
+}
 
 int main()
 {
@@ -32,12 +34,13 @@ int main()
     Tablero t2;
     Jugador j2(n2, &t2);
     
-
-
     
 
-    cout<< "Ingrese 1 para comenzar, cualquier otro caracter para salir"<<endl;
-    cin>>q;
+
+
+
+
+
     while (q == 1)
     {
 
